@@ -1,0 +1,123 @@
+:root {
+  --fondo: #fdf1f1;
+  --tarjeta: #ffffff;
+  --texto: #2b0f0f;
+  --texto-suave: #6b3a3a;
+  --borde: #b91c1c;
+  --boton: #b91c1c;
+  --boton-hover: #991b1b;
+  --foco: #7f1d1d;
+  --resultado: #b91c1c;
+  --error: #7a4a00;
+  --deshabilitado: #e8c4c4;
+  --texto-deshabilitado: #8a5a5a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 44rem;
+  padding: 2rem 2.25rem 1.75rem;
+  background: var(--tarjeta);
+  border: 1.5px solid var(--borde);
+  border-radius: 1rem;
+}
+
+h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.9rem;
+  font-weight: 400;
+}
+
+.instruccion {
+  margin: 0 0 1.5rem;
+  color: var(--texto-suave);
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.campo { display: block; }
+
+input,
+select,
+button {
+  height: 3rem;
+  padding: 0 0.9rem;
+  font: inherit;
+  border-radius: 0.6rem;
+}
+
+input,
+select {
+  border: 1.5px solid var(--borde);
+  background: var(--tarjeta);
+  color: var(--texto);
+}
+
+input { width: 6.5rem; }
+select { min-width: 9rem; }
+
+button {
+  padding: 0 1.6rem;
+  border: 1.5px solid var(--boton);
+  background: var(--boton);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--boton-hover);
+  border-color: var(--boton-hover);
+}
+
+button:disabled {
+  background: var(--deshabilitado);
+  border-color: var(--deshabilitado);
+  color: var(--texto-deshabilitado);
+  cursor: not-allowed;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+}
+
+.resultado {
+  min-height: 1.5rem;
+  margin: 1.25rem 0 0;
+  color: var(--resultado);
+}
+
+.resultado.error { color: var(--error); }
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .tarjeta { padding: 1.5rem 1.25rem; }
+  .campo, input, select, button { width: 100%; }
+}

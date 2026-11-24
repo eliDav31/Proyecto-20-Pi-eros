@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convertidor de temperatura</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>Convertidor de temperatura</h1>
+    <p class="instruccion">Ingresa la temperatura, elige las unidades y convierte.</p>
+
+    <form id="formulario" novalidate>
+      <label class="campo">
+        <span class="visualmente-oculto">Temperatura</span>
+        <input type="number" id="valor" placeholder="0.00" step="any" inputmode="decimal">
+      </label>
+
+      <label class="campo">
+        <span class="visualmente-oculto">Unidad de origen</span>
+        <select id="desde">
+          <option value="" selected disabled>Desde</option>
+          <option value="celsius">Celsius</option>
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+      </label>
+
+      <label class="campo">
+        <span class="visualmente-oculto">Unidad de destino</span>
+        <select id="hacia">
+          <option value="" selected disabled>Hacia</option>
+          <option value="celsius">Celsius</option>
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+      </label>
+
+      <button type="submit" id="convertir" disabled>Convertir</button>
+    </form>
+
+    <p id="resultado" class="resultado" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
